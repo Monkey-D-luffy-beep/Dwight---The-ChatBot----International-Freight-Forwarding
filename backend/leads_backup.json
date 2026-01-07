@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2026-01-06T06:26:44.715669",
+    "name": "Test User",
+    "email": "test@tigerlogistics.in",
+    "phone": "+91-9876543210",
+    "query_context": "",
+    "session_id": "",
+    "status": "New"
+  },
+  {
+    "timestamp": "2026-01-06T06:27:02.193770",
+    "name": "Test User",
+    "email": "test@example.com",
+    "phone": "+91 9876543210",
+    "query_context": "",
+    "session_id": "",
+    "status": "New"
+  },
+  {
+    "timestamp": "2026-01-06T06:33:51.362615",
+    "name": "Pytest User",
+    "email": "pytest@example.com",
+    "phone": "+91 9876543210",
+    "query_context": "",
+    "session_id": "",
+    "status": "New"
+  }
+]

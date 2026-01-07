@@ -1,0 +1,35 @@
+# Python virtual environment
+backend/venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Logs
+*.log
+*.log.*
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Backup files
+*.bak
+*.swp
+
+# Node.js dependencies
+frontend/node_modules/
