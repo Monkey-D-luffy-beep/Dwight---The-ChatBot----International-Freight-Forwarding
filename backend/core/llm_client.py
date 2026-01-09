@@ -1,12 +1,12 @@
 """
 Project Dwight - LLM Client
-Handles interactions with the language model using Ollama (local).
+Handles interactions with the language model using Groq cloud API.
 """
 
 from typing import Optional
 from pathlib import Path
-import ollama
 import structlog
+from groq import Groq
 
 from config import settings
 from core.intent_classifier import IntentType
@@ -15,6 +15,20 @@ logger = structlog.get_logger()
 
 # Cache for loaded prompts
 _prompt_cache: dict = {}
+
+# Groq client (lazy initialized)
+_groq_client = None
+
+
+def _get_groq_client():
+    """Get or create Groq client."""
+    global _groq_client
+    if _groq_client is None:
+        if not settings.groq_api_key:
+            raise ValueError("GROQ_API_KEY is required. Get one free at https://console.groq.com")
+        _groq_client = Groq(api_key=settings.groq_api_key)
+        logger.info("Groq client initialized", model=settings.groq_model)
+    return _groq_client
 
 
 def load_system_prompt(intent: IntentType) -> str:
@@ -115,25 +129,25 @@ async def generate_response(
                 "[No relevant context found in knowledge base]"
             ).replace("{query}", query)
         
-        # Generate response using Ollama
-        response = ollama.chat(
-            model=settings.llm_model,
+        # Generate response using Groq
+        client = _get_groq_client()
+        
+        response = client.chat.completions.create(
+            model=settings.groq_model,
             messages=[
                 {"role": "system", "content": formatted_prompt},
                 {"role": "user", "content": query}
             ],
-            options={
-                "temperature": temperature or settings.llm_temperature,
-                "num_predict": max_tokens or settings.llm_max_tokens,
-            }
+            temperature=temperature or settings.llm_temperature,
+            max_tokens=max_tokens or settings.llm_max_tokens,
         )
         
-        generated_text = response['message']['content'].strip()
+        generated_text = response.choices[0].message.content.strip()
         
         logger.info(
             "Response generated",
-            model=settings.llm_model,
-            eval_count=response.get('eval_count', None)
+            model=settings.groq_model,
+            tokens_used=response.usage.total_tokens if response.usage else None
         )
         
         return generated_text

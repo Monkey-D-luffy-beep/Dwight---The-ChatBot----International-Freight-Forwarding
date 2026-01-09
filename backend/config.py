@@ -24,26 +24,22 @@ class Settings(BaseSettings):
     debug: bool = False
     environment: str = "development"
     
-    # LLM Provider (ollama or openai)
-    llm_provider: str = "ollama"
+    # Groq Settings (cloud LLM - fast & free tier)
+    groq_api_key: str = ""  # Set via GROQ_API_KEY environment variable
+    groq_model: str = "llama-3.1-8b-instant"
     
-    # Ollama Settings (local)
-    ollama_base_url: str = "http://localhost:11434"
-    llm_model: str = "tinyllama"
-    embedding_model: str = "nomic-embed-text"
+    # Embeddings (using local sentence-transformers)
+    embedding_model: str = "all-MiniLM-L6-v2"
     
     # LLM Parameters
     llm_temperature: float = 0.1
     llm_max_tokens: int = 500
     
-    # OpenAI Settings (optional fallback)
-    openai_api_key: Optional[str] = None
-    
     # RAG Settings
     chunk_size: int = 1000
     chunk_overlap: int = 200
     top_k_results: int = 5
-    similarity_threshold: float = 0.5
+    similarity_threshold: float = 0.15
     
     # Rate Limiting
     rate_limit_requests: int = 100

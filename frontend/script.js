@@ -3,8 +3,10 @@
  * Connects to Project Dwight Backend API
  */
 
-// Configuration
+// Configuration - Update API_BASE_URL after deploying backend to Railway
 const CONFIG = {
+    // For local development: 'http://127.0.0.1:8000'
+    // For production: Your Railway URL like 'https://dwight-backend-production.up.railway.app'
     API_BASE_URL: 'http://127.0.0.1:8000',
     ENDPOINTS: {
         CHAT: '/api/chat',

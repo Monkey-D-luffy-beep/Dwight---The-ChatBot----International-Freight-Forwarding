@@ -1,21 +1,34 @@
 """
 Project Dwight - Embeddings Module
-Handles text embedding generation using Ollama (local).
+Handles text embedding generation using sentence-transformers (local, no API needed).
 """
 
 from typing import List
 import numpy as np
-import ollama
 import structlog
+from sentence_transformers import SentenceTransformer
 
 from config import settings
 
 logger = structlog.get_logger()
 
+# Lazy-loaded embedding model
+_embedding_model = None
+
+
+def _get_model():
+    """Get or create the embedding model."""
+    global _embedding_model
+    if _embedding_model is None:
+        logger.info("Loading embedding model", model=settings.embedding_model)
+        _embedding_model = SentenceTransformer(settings.embedding_model)
+        logger.info("Embedding model loaded successfully")
+    return _embedding_model
+
 
 async def get_embedding(text: str) -> List[float]:
     """
-    Generate embedding for a single text using Ollama.
+    Generate embedding for a single text.
     
     Args:
         text: Text to embed
@@ -24,11 +37,9 @@ async def get_embedding(text: str) -> List[float]:
         List of floats representing the embedding vector
     """
     try:
-        response = ollama.embeddings(
-            model=settings.embedding_model,
-            prompt=text
-        )
-        return response['embedding']
+        model = _get_model()
+        embedding = model.encode(text, convert_to_numpy=True)
+        return embedding.tolist()
     except Exception as e:
         logger.error("Embedding generation failed", error=str(e))
         raise
@@ -36,7 +47,7 @@ async def get_embedding(text: str) -> List[float]:
 
 async def get_embeddings_batch(texts: List[str]) -> List[List[float]]:
     """
-    Generate embeddings for multiple texts in batch using Ollama.
+    Generate embeddings for multiple texts in batch.
     
     Args:
         texts: List of texts to embed
@@ -44,20 +55,11 @@ async def get_embeddings_batch(texts: List[str]) -> List[List[float]]:
     Returns:
         List of embedding vectors
     """
-    embeddings = []
     try:
-        for i, text in enumerate(texts):
-            response = ollama.embeddings(
-                model=settings.embedding_model,
-                prompt=text
-            )
-            embeddings.append(response['embedding'])
-            
-            # Log progress every 20 texts
-            if (i + 1) % 20 == 0:
-                logger.debug("Embedding progress", completed=i+1, total=len(texts))
-        
-        return embeddings
+        model = _get_model()
+        embeddings = model.encode(texts, convert_to_numpy=True, show_progress_bar=True)
+        logger.info("Batch embeddings generated", count=len(texts))
+        return embeddings.tolist()
     except Exception as e:
         logger.error("Batch embedding generation failed", error=str(e))
         raise
