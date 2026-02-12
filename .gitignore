@@ -1,0 +1,36 @@
+# venv
+backend/venv/
+
+# python bytecode
+__pycache__/
+*.py[cod]
+
+# packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# logs
+*.log
+*.log.*
+
+# editor / IDE
+.vscode/
+.idea/
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# secrets
+.env
+
+# Backup files
+*.bak
+*.swp
+
+# Node.js dependencies
+frontend/node_modules/
