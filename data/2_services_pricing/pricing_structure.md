@@ -226,7 +226,7 @@ Volume commitments can unlock:
 **GTMT Ship:** https://ship.greentimemarinetime.in/signup.html
 
 ### For Detailed Quotations
-**Phone:** (+91) 011-56645554  
+**Phone:** (+91) 011-42589631  
 **Email:** info@greentimemarinetime.in  
 **Web:** https://www.greentimemarinetime.in/contact.php
 

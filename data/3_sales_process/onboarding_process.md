@@ -9,7 +9,7 @@ Welcome to Green Time Marine Time! This guide explains how to become a customer 
 
 ### Step 1: Initial Contact
 Reach out to us through any of these channels:
-- **Phone:** (+91) 011-56645554
+- **Phone:** (+91) 011-42589631
 - **Email:** info@greentimemarinetime.in
 - **Website:** https://www.greentimemarinetime.in/contact.php
 - **GTMT Ship:** https://ship.greentimemarinetime.in/signup.html
@@ -233,7 +233,7 @@ If you're a logistics company looking to partner with Green Time Marine Time:
 ## Contact for Onboarding
 
 ### New Customer Inquiries
-**Phone:** (+91) 011-56645554
+**Phone:** (+91) 011-42589631
 **Email:** info@greentimemarinetime.in
 **Website:** https://www.greentimemarinetime.in/contact.php
 

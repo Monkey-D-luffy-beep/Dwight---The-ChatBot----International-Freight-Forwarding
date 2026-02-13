@@ -25,7 +25,7 @@ Green Time Marine Time provides real-time shipment tracking through our digital 
 
 ### 2. Direct Contact
 For immediate tracking assistance, contact our support team:
-- **Phone:** (+91) 011-56645554
+- **Phone:** (+91) 011-42589631
 - **Email:** info@greentimemarinetime.in
 - **WhatsApp:** Available on our website
 
@@ -126,7 +126,7 @@ For immediate tracking assistance, contact our support team:
 ## Contact for Tracking Support
 
 **Customer Support:**
-- Phone: (+91) 011-56645554
+- Phone: (+91) 011-42589631
 - Email: info@greentimemarinetime.in
 - Website: https://www.greentimemarinetime.in/contact.php
 

@@ -5,8 +5,8 @@
 ### Green Time Marine Time India Limited
 
 **Address:**
-804A-807, 60 Skylark Building
-Nehru Place, New Delhi-110019
+1201-1205, Horizon Tower
+Barakhamba Road, New Delhi-110001
 India
 
 **Registered Address:**
@@ -19,7 +19,7 @@ New Delhi, 110020 India
 ## Contact Details
 
 ### General Inquiries
-- **Phone:** (+91) 011-56645554
+- **Phone:** (+91) 011-42589631
 - **Email:** info@greentimemarinetime.in
 - **Website:** https://www.greentimemarinetime.in/
 

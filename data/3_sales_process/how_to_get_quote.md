@@ -44,7 +44,7 @@ GTMT Ship is our digital freight booking and management platform that provides i
 ### Contact Methods
 
 **Phone:**
-(+91) 011-56645554
+(+91) 011-42589631
 
 **Email:**
 info@greentimemarinetime.in
@@ -192,7 +192,7 @@ Confirm booking to proceed with shipment.
 **GTMT Ship:** https://ship.greentimemarinetime.in/signup.html
 
 ### For Detailed Quotations
-**Phone:** (+91) 011-56645554
+**Phone:** (+91) 011-42589631
 **Email:** info@greentimemarinetime.in
 **Web:** https://www.greentimemarinetime.in/contact.php
 
